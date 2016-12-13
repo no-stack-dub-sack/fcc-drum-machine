@@ -53,14 +53,13 @@ class DrumPad extends React.Component {
 		this.props.updateDisplay(this.props.clipId.replace('-', ' '));
 	}
 	render() {
-		console.log(this.props.clipVolume)
 		return (
 			<div>
 				<div id={this.props.clipId + '-container'} 
 					 onClick={this.playSound} 
 					 className="drum-pad" 
 					 style={this.state.activePad} >
-					<audio className='clip' id={this.props.clipId} volume={this.props.clipVolume} src={this.props.clip}></audio>
+					<audio className='clip' id={this.props.clipId} src={this.props.clip}></audio>
 	    			<p>{this.props.keyTrigger}</p>
 				</div>
 			</div>

@@ -76,15 +76,17 @@ class App extends React.Component {
       sliderVal: e.target.value,
       display: "Volume: " + Math.round(e.target.value * 100)
     });
-    // const audioClips = document.querySelectorAll('.clip');
-    // for (let i = 0; i < audioClips.length; i++) {
-    //   audioClips[i].volume = e.target.value;
-    // }
   }
   render() {
+    {
+      document.querySelectorAll('.clip').forEach(sound => {
+        sound.volume = this.state.sliderVal
+      });
+    }
     return (
       <div className="inner-container">
         <PadBank  updateDisplay={this.displayClipName}
+                  clipVolume={this.state.sliderVal}
                   currentPadBank={this.state.currentPadBank} />
         <div className="controls-container">
           <div className="screen-container">
@@ -96,7 +98,7 @@ class App extends React.Component {
             <div style={this.state.tabPosition} className="inner" />
           </div>
           <div className="volume-slider">
-            <input type="range" min="0" max="1" value={this.state.sliderVal} step="0.01" onChange={this.adjustVolume} />
+            <input type="range" min="0" max="1" step="0.01" onChange={this.adjustVolume} />
           </div>
         </div>
       </div>
