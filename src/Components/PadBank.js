@@ -7,61 +7,70 @@ class PadBank extends React.Component {
 	}
 	render() {
 		return (
-			<div className="pad-bank">
+			<div className="pad-bank" >
 				<DrumPad 
-					clipId="Chord-1" 
-					clip="https://s3-us-west-2.amazonaws.com/s.cdpn.io/377560/chord1.wav"
+					clipId={this.props.currentPadBank[0].id} 
+					clip={this.props.currentPadBank[0].url}
 					keyTrigger="Q"
 					keyCode={81} 
-					updateDisplay={this.props.updateDisplay} />
+					updateDisplay={this.props.updateDisplay}
+					clipVolume={this.props.clipVolume} />
 				<DrumPad 
-					clipId="Chord-2" 
-					clip="https://s3-us-west-2.amazonaws.com/s.cdpn.io/377560/chord2.wav"
+					clipId={this.props.currentPadBank[1].id} 
+					clip={this.props.currentPadBank[1].url}
 					keyTrigger="W"
 					keyCode={87} 
-					updateDisplay={this.props.updateDisplay} />
+					updateDisplay={this.props.updateDisplay} 
+					clipVolume={this.props.clipVolume} />
 				<DrumPad 
-					clipId="Pad" 
-					clip="https://s3-us-west-2.amazonaws.com/s.cdpn.io/377560/lick.wav"
+					clipId={this.props.currentPadBank[2].id} 
+					clip={this.props.currentPadBank[2].url}
 					keyTrigger="E"
 					keyCode={69}
-					updateDisplay={this.props.updateDisplay} />
+					updateDisplay={this.props.updateDisplay} 
+					clipVolume={this.props.clipVolume} />
 				<DrumPad 
-					clipId="Kick" 
-					clip="https://s3-us-west-2.amazonaws.com/s.cdpn.io/377560/Kick2.wav"
+					clipId={this.props.currentPadBank[3].id} 
+					clip={this.props.currentPadBank[3].url}
 					keyTrigger="A" 
 					keyCode={65} 
-					updateDisplay={this.props.updateDisplay} />
+					updateDisplay={this.props.updateDisplay} 
+					clipVolume={this.props.clipVolume} />
 				<DrumPad 
-					clipId="Closed-Hat" 
-					clip="https://s3-us-west-2.amazonaws.com/s.cdpn.io/377560/ClosedHH%207Mile.wav"
+					clipId={this.props.currentPadBank[4].id} 
+					clip={this.props.currentPadBank[4].url}
 					keyTrigger="S" 
 					keyCode={83} 
-					updateDisplay={this.props.updateDisplay} />
+					updateDisplay={this.props.updateDisplay} 
+					clipVolume={this.props.clipVolume} />
 				<DrumPad 
-					clipId="Clap" 
-					clip="https://s3-us-west-2.amazonaws.com/s.cdpn.io/377560/Clap%207Mile.wav"
+					clipId={this.props.currentPadBank[5].id} 
+					clip={this.props.currentPadBank[5].url}
 					keyTrigger="D"
 					keyCode={68} 
-					updateDisplay={this.props.updateDisplay} />
+					updateDisplay={this.props.updateDisplay} 
+					clipVolume={this.props.clipVolume} />
 				<DrumPad 
-					clipId="Sub-Kick" 
-					clip="https://s3-us-west-2.amazonaws.com/s.cdpn.io/377560/kick.WAV"
+					clipId={this.props.currentPadBank[6].id} 
+					clip={this.props.currentPadBank[6].url}
 					keyTrigger="Z"
 					keyCode={90} 
-					updateDisplay={this.props.updateDisplay} />
+					updateDisplay={this.props.updateDisplay}
+					clipVolume={this.props.clipVolume} />
 				<DrumPad 
-					clipId="Snare" 
-					clip="https://s3-us-west-2.amazonaws.com/s.cdpn.io/377560/snare.WAV"
+					clipId={this.props.currentPadBank[7].id} 
+					clip={this.props.currentPadBank[7].url}
 					keyTrigger="X"
 					keyCode={88} 
-					updateDisplay={this.props.updateDisplay} />
+					updateDisplay={this.props.updateDisplay} 
+					clipVolume={this.props.clipVolume} />
 				<DrumPad 
-					clipId="Open-Hat" 
-					clip="https://s3-us-west-2.amazonaws.com/s.cdpn.io/377560/open.WAV"
+					clipId={this.props.currentPadBank[8].id} 
+					clip={this.props.currentPadBank[8].url}
 					keyTrigger="C"
 					keyCode={67} 
-					updateDisplay={this.props.updateDisplay} />
+					updateDisplay={this.props.updateDisplay} 
+					clipVolume={this.props.clipVolume} />
 			</div>
 		)
 	}
