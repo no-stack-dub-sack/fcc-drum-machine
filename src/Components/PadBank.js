@@ -6,62 +6,33 @@ class PadBank extends React.Component {
 		super(props);
 	}
 	render() {
+		let padBank;
+		this.props.power ?
+			padBank = this.props.currentPadBank.map( (drumObj, i, padBankArr) => {
+				return (
+					<DrumPad 
+						clipId={padBankArr[i].id} 
+						clip={padBankArr[i].url}
+						keyTrigger={padBankArr[i].keyTrigger}
+						keyCode={padBankArr[i].keyCode} 
+						updateDisplay={this.props.updateDisplay} 
+						power={this.props.power} />
+				)
+			}) :
+			padBank = this.props.currentPadBank.map( (drumObj, i, padBankArr) => {
+				return (
+					<DrumPad 
+						clipId={padBankArr[i].id} 
+						clip="#"
+						keyTrigger={padBankArr[i].keyTrigger}
+						keyCode={padBankArr[i].keyCode} 
+						updateDisplay={this.props.updateDisplay} 
+						power={this.props.power} />
+				)
+			});
 		return (
 			<div className="pad-bank" >
-				<DrumPad 
-					clipId={this.props.currentPadBank[0].id} 
-					clip={this.props.currentPadBank[0].url}
-					keyTrigger="Q"
-					keyCode={81} 
-					updateDisplay={this.props.updateDisplay} />
-				<DrumPad 
-					clipId={this.props.currentPadBank[1].id} 
-					clip={this.props.currentPadBank[1].url}
-					keyTrigger="W"
-					keyCode={87} 
-					updateDisplay={this.props.updateDisplay} />
-				<DrumPad 
-					clipId={this.props.currentPadBank[2].id} 
-					clip={this.props.currentPadBank[2].url}
-					keyTrigger="E"
-					keyCode={69}
-					updateDisplay={this.props.updateDisplay} />
-				<DrumPad 
-					clipId={this.props.currentPadBank[3].id} 
-					clip={this.props.currentPadBank[3].url}
-					keyTrigger="A" 
-					keyCode={65} 
-					updateDisplay={this.props.updateDisplay} />
-				<DrumPad 
-					clipId={this.props.currentPadBank[4].id} 
-					clip={this.props.currentPadBank[4].url}
-					keyTrigger="S" 
-					keyCode={83} 
-					updateDisplay={this.props.updateDisplay} />
-				<DrumPad 
-					clipId={this.props.currentPadBank[5].id} 
-					clip={this.props.currentPadBank[5].url}
-					keyTrigger="D"
-					keyCode={68} 
-					updateDisplay={this.props.updateDisplay} />
-				<DrumPad 
-					clipId={this.props.currentPadBank[6].id} 
-					clip={this.props.currentPadBank[6].url}
-					keyTrigger="Z"
-					keyCode={90} 
-					updateDisplay={this.props.updateDisplay}/>
-				<DrumPad 
-					clipId={this.props.currentPadBank[7].id} 
-					clip={this.props.currentPadBank[7].url}
-					keyTrigger="X"
-					keyCode={88} 
-					updateDisplay={this.props.updateDisplay} />
-				<DrumPad 
-					clipId={this.props.currentPadBank[8].id} 
-					clip={this.props.currentPadBank[8].url}
-					keyTrigger="C"
-					keyCode={67} 
-					updateDisplay={this.props.updateDisplay} />
+				{padBank}
 			</div>
 		)
 	}
