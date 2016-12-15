@@ -2,6 +2,7 @@ import React from 'react';
 import PadBank from './Components/PadBank';
 import './SCSS/App.scss';
 import './SCSS/CustomSlider.scss';
+import 'font-awesome/css/font-awesome.css';
 
 const bankOne = [
 	{keyCode: 81, keyTrigger: 'Q', id: 'Chord-1', url: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/377560/chord1.wav'},
@@ -103,6 +104,7 @@ class App extends React.Component {
 					currentPadBank={this.state.currentPadBank} />
 
 				<div className="controls-container">
+
 					<div className="control">
 						<p>Power</p>
 						<div onClick={this.powerControl} className="select">

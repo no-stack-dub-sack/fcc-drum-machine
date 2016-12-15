@@ -117,6 +117,12 @@ module.exports = {
       // tags. If you use code splitting, however, any async bundles will still
       // use the "style" loader inside the async code so CSS from them won't be
       // in the main CSS file.
+      // Add SASS/SCSS:
+      {
+        test: /\.scss$/,
+        include: paths.appSrc,
+        loaders: ["style", "css", "sass"]
+      },
       {
         test: /\.css$/,
         // "?-autoprefixer" disables autoprefixer in css-loader itself:
